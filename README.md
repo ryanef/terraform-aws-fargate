@@ -24,7 +24,7 @@ You can add your own images and try deployments with a NAT Gateway or using VPC 
 
 You don't have to include them manually but this uses [VPC](https://registry.terraform.io/modules/ryanef/vpc/aws/latest) and [Loadbalancer](https://registry.terraform.io/modules/ryanef/loadbalancer/aws/latest) modules for its base networking. They are imported in the `network.tf` in this module.
 
-<img src="natECS.png">
+<img src="https://ryanf.dev/blog-images/natECS.png">
 
 For tasks you want to keep in private subnets, you can use either VPC Endpoints or NAT Gateway.
 
