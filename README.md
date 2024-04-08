@@ -8,6 +8,8 @@ On This Page:
 
 - [Create Fargate Infrastructure](#create-fargate-infrastructure-with-terraform)
 
+- [Monitoring and Logging](#monitoring)
+
 - [Change Network Settings](#change-networking-details)
 
 - [Optimization Settings](#optimization-settings)
@@ -16,7 +18,7 @@ On This Page:
 
 This Fargate module allows you to experiment with different networking options like VPC Endpoints and NAT Gateway for Fargate tasks running in private or public subnets. Also, there's some flexibility in settings for the Application Loadbalancer, Target Groups, Listeners, Health Checks, etc. 
 
-This isn't intended for production use but for optimizing and testing. Finding the optimal settings can really speed up your container deployments.
+This isn't intended for production use but for optimizing and testing. Finding the optimal settings can really speed up your container deployments. AutoScale will be in an upcoming version.
 
 You can add your own images and try deployments with a NAT Gateway or using VPC Endpoints. Easily modify container names and ports, alter health check settings, Target Group deregistration delay, etc. The VPC and networking is created automatically with no configuration required on your end but also customizable
 
@@ -134,7 +136,7 @@ When it is done, it'll output the DNS address for the loadbalancer and you can v
 
 ## Monitoring
 
-VPC Flow Logs, ECS Service and ECS Tasks are all using CloudWatch Logs and can be found with names like `vpcName-environment-*`. The Application Loadbalancer does not have logging enabled but if you wish to do that it will require making an S3 Bucket.
+VPC Flow Logs, ECS Service and ECS Tasks are all using CloudWatch Logs and can be found with names like `vpcName-environment-*`. The Application Loadbalancer does not have logging enabled but if you wish to do that it will require making an S3 Bucket. AWS X-ray will be added in an upcoming version.
 
 ## Change Networking Details
 
