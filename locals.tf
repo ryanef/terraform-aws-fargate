@@ -42,32 +42,34 @@ locals {
   target_group = {
 
     frontend = {
-        deregistration_delay=120
+       
         enabled =     true
         name        = "frontend"
         port        = 80
         protocol    = "HTTP"
         target_type = "ip"
         vpc_id      = module.vpc.vpc_id
-        healthy_threshold   = 5
-        unhealthy_threshold = 3
-        interval            = 45
-        timeout             = 25
+        
+        deregistration_delay = 30
+        healthy_threshold    = 5
+        unhealthy_threshold  = 3
+        interval             = 45
+        timeout              = 25
     }
 
    backend = {
-        deregistration_delay=120
         enabled =    true
         name        = "backend"
         port        = 5000
         protocol    = "HTTP"
         target_type = "ip"
         vpc_id      = module.vpc.vpc_id
-        
-        healthy_threshold   = 5
-        unhealthy_threshold = 3
-        interval            = 45
-        timeout             = 25
+
+        deregistration_delay = 30
+        healthy_threshold    = 5
+        unhealthy_threshold  = 3
+        interval             = 45
+        timeout              = 25
     }   
   }
 
