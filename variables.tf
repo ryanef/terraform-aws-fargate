@@ -15,7 +15,7 @@ variable "use_endpoints" {
 
 variable "use_nat_gateway" {
   type = bool
-  default = false
+  default = true
 }
 
 variable "vpc_name" {
@@ -26,14 +26,14 @@ variable "vpc_name" {
 ### IMAGES ###
 ### REFERENCED IN LOCALS.TF FILE ###
 variable "frontend_image" {
-  default = ""
+  default = "667528415698.dkr.ecr.us-east-1.amazonaws.com/reactdevtest"
   type = string
-  description = "ECR Repository URI, example:590133767612.dkr.ecr.us-east-1.amazonaws.com/reactdevtest"
+  description = "ECR Repository URI, example:590173767612.dkr.ecr.us-east-1.amazonaws.com/reactdevtest"
 }
 variable "backend_image" {
-  default = ""
+  default = "667528415698.dkr.ecr.us-east-1.amazonaws.com/backenddevtest"
   type = string
-   description = "ECR Repository URI, example:590133767612.dkr.ecr.us-east-1.amazonaws.com/reactdevtest"
+  description = "ECR Repository URI for backend."
 }
 
 ### NETWORKING ###
